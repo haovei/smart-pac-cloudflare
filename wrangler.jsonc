@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "smart-pac-cloudflare",
   "main": "src/index.ts",
-  "compatibility_date": "2025-04-10"
+  "compatibility_date": "2025-04-10",
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -21,13 +21,13 @@
   //     "bucket_name": "my-bucket"
   //   }
   // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "smart-pac-db",
+      "database_id": "9fa3567f-b334-40eb-94e6-60f94b8a3cfd"
+    }
+  ]
   // "ai": {
   //   "binding": "AI"
   // },
