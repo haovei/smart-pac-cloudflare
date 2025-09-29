@@ -1,0 +1,14 @@
+"$schema" = "https://developers.cloudflare.com/workers/wrangler/config-schema.json"
+name = "smart-pac"
+main = "./src/app.ts"
+compatibility_date = "2025-09-01"
+
+[assets]
+binding = "ASSETS"
+directory = "./public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "smart-pac-db"
+database_id = "3c1e0ba0-d7a6-4e0b-9c9d-b8da72f002b4"
+migrations_dir = "./migrations"

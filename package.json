@@ -1,14 +1,27 @@
 {
-    "name": "smart-pac-cloudflare",
+    "name": "smart-pac",
+    "version": "2.0.0",
+    "description": "A lightweight, fast PAC proxy configuration service. Only need to configure once, it will take effect on multiple devices automatically.",
+    "type": "module",
     "scripts": {
-        "dev": "wrangler dev",
-        "deploy": "wrangler deploy --minify"
+        "dev": "wrangler dev --local",
+        "build": "wrangler deploy --dry-run",
+        "deploy": "wrangler deploy",
+        "test": "vitest run",
+        "cf:migrate": "wrangler d1 migrations apply smart-pac-db",
+        "cf:migrate:local": "wrangler d1 migrations apply smart-pac-db --local",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
     "dependencies": {
-        "hono": "^4.7.6"
+        "hono": "^4.2.2"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20250410.0",
-        "wrangler": "^4.9.1"
+        "@cloudflare/workers-types": "^4.20240919.0",
+        "conventional-changelog-cli": "^4.1.0",
+        "vitest": "^1.6.0",
+        "wrangler": "^4.40.2"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
     }
 }
